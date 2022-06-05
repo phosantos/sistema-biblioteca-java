@@ -5,6 +5,8 @@ public class Item {
   private int id, publicationYear;
   private String title, author, publisher, kind, description;
 
+  // disponivel = true / false e qtd;
+
   public Item(int id, int publicationYear, String title, String author, String publisher, String kind,
       String description) {
     this.id = id;

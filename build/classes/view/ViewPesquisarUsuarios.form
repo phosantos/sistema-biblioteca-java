@@ -84,9 +84,9 @@
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="414" max="32767" attributes="0"/>
+                  <EmptySpace pref="380" max="32767" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="414" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="380" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -118,7 +118,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Pesquisar usu&#xe1;rios"/>
+            <Property name="text" type="java.lang.String" value="PESQUISAR USU&#xc1;RIOS"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="pesquisaInput">
