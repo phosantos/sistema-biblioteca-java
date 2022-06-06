@@ -4,8 +4,21 @@ public class Item {
 
   private int id, publicationYear;
   private String title, author, publisher, kind, description;
+  private boolean isAvailable;
 
   // disponivel = true / false e qtd;
+
+  public Item(int id, int publicationYear, String title, String author, String publisher, String kind,
+      String description, boolean isAvailable) {
+    this.id = id;
+    this.publicationYear = publicationYear;
+    this.title = title;
+    this.author = author;
+    this.publisher = publisher;
+    this.kind = kind;
+    this.description = description;
+    this.isAvailable = isAvailable;
+  }
 
   public Item(int id, int publicationYear, String title, String author, String publisher, String kind,
       String description) {
@@ -16,6 +29,7 @@ public class Item {
     this.publisher = publisher;
     this.kind = kind;
     this.description = description;
+    this.isAvailable = true;
   }
 
   public Item(int publicationYear, String title, String author, String publisher, String kind,
@@ -26,6 +40,7 @@ public class Item {
     this.publisher = publisher;
     this.kind = kind;
     this.description = description;
+    this.isAvailable = true;
   }
 
   public int getId() {
@@ -82,6 +97,14 @@ public class Item {
 
   public void setDescription(String description) {
     this.description = description;
+  }
+
+  public boolean getIsAvailable() {
+    return isAvailable;
+  }
+
+  public void setIsAvailable(boolean isAvailable) {
+    this.isAvailable = isAvailable;
   }
 
 }

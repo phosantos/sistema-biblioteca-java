@@ -4,6 +4,18 @@
  */
 package view;
 
+import view.ViewUsuarios.ViewPesquisarUsuarios;
+
+import view.ViewAcervo.ViewCadAcervo;
+import view.ViewAcervo.ViewEditarAcervo;
+import view.ViewAcervo.ViewExcluirAcervo;
+import view.ViewAcervo.ViewListarAcervo;
+import view.ViewAcervo.ViewPesquisarAcervo;
+import view.ViewUsuarios.ViewCadUsuarios;
+import view.ViewUsuarios.ViewExcluirUsuarios;
+import view.ViewUsuarios.ViewListarUsuarios;
+import view.ViewUsuarios.ViewEditarUsuarios;
+
 /**
  *
  * @author Pedro Santos
@@ -24,22 +36,35 @@ public class ViewAdmDashboard extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        mnAcervo = new javax.swing.JMenu();
+        cadAcervo = new javax.swing.JMenuItem();
+        editarAcervo = new javax.swing.JMenuItem();
+        excluirAcervo = new javax.swing.JMenuItem();
+        pesquisarAcervo = new javax.swing.JMenuItem();
+        listarAcervo = new javax.swing.JMenuItem();
+        mnClientes = new javax.swing.JMenu();
+        cadClientes = new javax.swing.JMenuItem();
+        editarClientes = new javax.swing.JMenuItem();
+        excluirClientes = new javax.swing.JMenuItem();
+        pesquisarClientes = new javax.swing.JMenuItem();
+        listarClientes = new javax.swing.JMenuItem();
         mnUsuarios = new javax.swing.JMenu();
         cadUsuarios = new javax.swing.JMenuItem();
         editarUsuarios = new javax.swing.JMenuItem();
         excluirUsuarios = new javax.swing.JMenuItem();
-        listarUsuarios = new javax.swing.JMenuItem();
         pesquisarUsuarios = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
+        listarUsuarios = new javax.swing.JMenuItem();
+        mnEmprestimos = new javax.swing.JMenu();
+        mnRelatorios = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Dashboard (ADM)");
@@ -50,34 +75,87 @@ public class ViewAdmDashboard extends javax.swing.JFrame {
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
-        );
+                jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 1280, Short.MAX_VALUE));
         jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 697, Short.MAX_VALUE)
-        );
+                jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 697, Short.MAX_VALUE));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
-        );
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jDesktopPane1));
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
-        );
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jDesktopPane1));
 
-        jMenu1.setText("Acervo");
-        jMenuBar1.add(jMenu1);
+        mnAcervo.setText("Acervo");
 
-        jMenu2.setText("Clientes");
-        jMenuBar1.add(jMenu2);
+        cadAcervo.setText("Cadastrar");
+        cadAcervo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadAcervoActionPerformed(evt);
+            }
+        });
+        mnAcervo.add(cadAcervo);
 
-        mnUsuarios.setText("Usuarios");
+        editarAcervo.setText("Editar");
+        editarAcervo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarAcervoActionPerformed(evt);
+            }
+        });
+        mnAcervo.add(editarAcervo);
 
-        cadUsuarios.setText("Cadastar");
+        excluirAcervo.setText("Excluir");
+        excluirAcervo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluirAcervoActionPerformed(evt);
+            }
+        });
+        mnAcervo.add(excluirAcervo);
+
+        pesquisarAcervo.setText("Pesquisar");
+        pesquisarAcervo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pesquisarAcervoActionPerformed(evt);
+            }
+        });
+        mnAcervo.add(pesquisarAcervo);
+
+        listarAcervo.setText("Listar");
+        listarAcervo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listarAcervoActionPerformed(evt);
+            }
+        });
+        mnAcervo.add(listarAcervo);
+
+        jMenuBar1.add(mnAcervo);
+
+        mnClientes.setText("Clientes");
+
+        cadClientes.setText("Cadastrar");
+        mnClientes.add(cadClientes);
+
+        editarClientes.setText("Editar");
+        mnClientes.add(editarClientes);
+
+        excluirClientes.setText("Excluir");
+        mnClientes.add(excluirClientes);
+
+        pesquisarClientes.setText("Pesquisar");
+        mnClientes.add(pesquisarClientes);
+
+        listarClientes.setText("Listar");
+        mnClientes.add(listarClientes);
+
+        jMenuBar1.add(mnClientes);
+
+        mnUsuarios.setText("Usuários");
+
+        cadUsuarios.setText("Cadastrar");
         cadUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadUsuariosActionPerformed(evt);
@@ -101,14 +179,6 @@ public class ViewAdmDashboard extends javax.swing.JFrame {
         });
         mnUsuarios.add(excluirUsuarios);
 
-        listarUsuarios.setText("Listar");
-        listarUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listarUsuariosActionPerformed(evt);
-            }
-        });
-        mnUsuarios.add(listarUsuarios);
-
         pesquisarUsuarios.setText("Pesquisar");
         pesquisarUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,41 +187,67 @@ public class ViewAdmDashboard extends javax.swing.JFrame {
         });
         mnUsuarios.add(pesquisarUsuarios);
 
+        listarUsuarios.setText("Listar");
+        listarUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listarUsuariosActionPerformed(evt);
+            }
+        });
+        mnUsuarios.add(listarUsuarios);
+
         jMenuBar1.add(mnUsuarios);
 
-        jMenu4.setText("Emprestimos");
-        jMenuBar1.add(jMenu4);
+        mnEmprestimos.setText("Empréstimos");
+        jMenuBar1.add(mnEmprestimos);
 
-        jMenu5.setText("Relatorios");
-        jMenuBar1.add(jMenu5);
+        mnRelatorios.setText("Relatórios");
+        jMenuBar1.add(mnRelatorios);
 
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void editarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarUsuariosActionPerformed
-        ViewEditarUsuarios editUsuarios = new ViewEditarUsuarios();
-        jDesktopPane1.add(editUsuarios);
-        editUsuarios.setVisible(true);
-    }//GEN-LAST:event_editarUsuariosActionPerformed
+    private void cadAcervoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cadAcervoActionPerformed
+        ViewCadAcervo cadAcervo = new ViewCadAcervo();
+        jDesktopPane1.add(cadAcervo);
+        cadAcervo.setVisible(true);
+    }// GEN-LAST:event_cadAcervoActionPerformed
 
-    private void excluirUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirUsuariosActionPerformed
-            ViewExcluirUsuarios excluirUsuarios = new ViewExcluirUsuarios();
-            jDesktopPane1.add(excluirUsuarios);
-            excluirUsuarios.setVisible(true);
-    }//GEN-LAST:event_excluirUsuariosActionPerformed
+    private void editarAcervoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_editarAcervoActionPerformed
+        ViewEditarAcervo editarAcervo = new ViewEditarAcervo();
+        jDesktopPane1.add(editarAcervo);
+        editarAcervo.setVisible(true);
+    }// GEN-LAST:event_editarAcervoActionPerformed
+
+    private void excluirAcervoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_excluirAcervoActionPerformed
+        ViewExcluirAcervo excluirAcervo = new ViewExcluirAcervo();
+        jDesktopPane1.add(excluirAcervo);
+        excluirAcervo.setVisible(true);
+    }// GEN-LAST:event_excluirAcervoActionPerformed
+
+    private void pesquisarAcervoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_pesquisarAcervoActionPerformed
+        ViewPesquisarAcervo pesquisarAcervo = new ViewPesquisarAcervo();
+        jDesktopPane1.add(pesquisarAcervo);
+        pesquisarAcervo.setVisible(true);
+    }// GEN-LAST:event_pesquisarAcervoActionPerformed
+
+    private void listarAcervoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_listarAcervoActionPerformed
+        ViewListarAcervo listarAcervo = new ViewListarAcervo();
+        jDesktopPane1.add(listarAcervo);
+        listarAcervo.setVisible(true);
+    }// GEN-LAST:event_listarAcervoActionPerformed
 
     private void cadUsuariosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cadUsuariosActionPerformed
         ViewCadUsuarios cadUsuarios = new ViewCadUsuarios();
@@ -159,17 +255,29 @@ public class ViewAdmDashboard extends javax.swing.JFrame {
         cadUsuarios.setVisible(true);
     }// GEN-LAST:event_cadUsuariosActionPerformed
 
-    private void listarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_listarUsuariosActionPerformed
-        ViewListarUsuarios listarUsuarios = new ViewListarUsuarios();
-        jDesktopPane1.add(listarUsuarios);
-        listarUsuarios.setVisible(true);
-    }// GEN-LAST:event_listarUsuariosActionPerformed
+    private void editarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_editarUsuariosActionPerformed
+        ViewEditarUsuarios editarUsuarios = new ViewEditarUsuarios();
+        jDesktopPane1.add(editarUsuarios);
+        editarUsuarios.setVisible(true);
+    }// GEN-LAST:event_editarUsuariosActionPerformed
+
+    private void excluirUsuariosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_excluirUsuariosActionPerformed
+        ViewExcluirUsuarios excluirUsuarios = new ViewExcluirUsuarios();
+        jDesktopPane1.add(excluirUsuarios);
+        excluirUsuarios.setVisible(true);
+    }// GEN-LAST:event_excluirUsuariosActionPerformed
 
     private void pesquisarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_pesquisarUsuariosActionPerformed
         ViewPesquisarUsuarios pesquisarUsuarios = new ViewPesquisarUsuarios();
         jDesktopPane1.add(pesquisarUsuarios);
         pesquisarUsuarios.setVisible(true);
     }// GEN-LAST:event_pesquisarUsuariosActionPerformed
+
+    private void listarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_listarUsuariosActionPerformed
+        ViewListarUsuarios listarUsuarios = new ViewListarUsuarios();
+        jDesktopPane1.add(listarUsuarios);
+        listarUsuarios.setVisible(true);
+    }// GEN-LAST:event_listarUsuariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,18 +323,28 @@ public class ViewAdmDashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem cadAcervo;
+    private javax.swing.JMenuItem cadClientes;
     private javax.swing.JMenuItem cadUsuarios;
+    private javax.swing.JMenuItem editarAcervo;
+    private javax.swing.JMenuItem editarClientes;
     private javax.swing.JMenuItem editarUsuarios;
+    private javax.swing.JMenuItem excluirAcervo;
+    private javax.swing.JMenuItem excluirClientes;
     private javax.swing.JMenuItem excluirUsuarios;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenuItem listarAcervo;
+    private javax.swing.JMenuItem listarClientes;
     private javax.swing.JMenuItem listarUsuarios;
+    private javax.swing.JMenu mnAcervo;
+    private javax.swing.JMenu mnClientes;
+    private javax.swing.JMenu mnEmprestimos;
+    private javax.swing.JMenu mnRelatorios;
     private javax.swing.JMenu mnUsuarios;
+    private javax.swing.JMenuItem pesquisarAcervo;
+    private javax.swing.JMenuItem pesquisarClientes;
     private javax.swing.JMenuItem pesquisarUsuarios;
     // End of variables declaration//GEN-END:variables
 }

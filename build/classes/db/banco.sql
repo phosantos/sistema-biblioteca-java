@@ -14,4 +14,14 @@ create table user(
 
 insert into user values(null,"adm","adm","adm","adm",true);
 
-SELECT * from user;
+create table item(
+	id integer not null auto_increment,
+    titulo varchar(80) not null,
+    autor varchar(80) not null,
+    editora varchar(80) not null,
+    categoria varchar(80) not null,
+    descricao varchar(240),
+    anoPublicacao integer not null,
+    disponivel boolean not null,
+    primary key(id)
+);
