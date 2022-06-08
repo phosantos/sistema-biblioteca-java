@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conector {
-  static String urlDB = "jdbc:mysql://localhost:3306/biblioteca_wissen";
+  static String urlDB = "jdbc:mysql://localhost:3306/sistema_biblioteca";
   static String username = "root";
   static String password = "root";
 

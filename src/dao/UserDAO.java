@@ -19,14 +19,16 @@ public class UserDAO {
   }
 
   public boolean insertUser(User user) throws SQLException {
-    String sql = "INSERT into user (nome,login,senha,cpf,verificaAdm) VALUES(?,?,?,?,?)";
+    String sql = "INSERT into usuario (nome,cpf,telefone,email,login_usuario,senha,verificar_adm) VALUES(?,?,?,?,?,?,?)";
     PreparedStatement statement = connection.prepareStatement(sql);
 
     statement.setString(1, user.getName());
-    statement.setString(2, user.getUsername());
-    statement.setString(3, user.getPassword());
-    statement.setString(4, user.getCpf());
-    statement.setBoolean(5, user.getIsAdm());
+    statement.setString(2, user.getCpf());
+    statement.setString(3, user.getPhone());
+    statement.setString(4, user.getEmail());
+    statement.setString(5, user.getUsername());
+    statement.setString(6, user.getPassword());
+    statement.setBoolean(7, user.getIsAdm());
 
     int rowsAdded = statement.executeUpdate();
 
@@ -35,15 +37,17 @@ public class UserDAO {
   }
 
   public boolean updateUser(User user) throws SQLException {
-    String sql = "UPDATE user set nome=?, login=?, senha=?, cpf=?, verificaAdm=? WHERE id=?";
+    String sql = "UPDATE usuario set nome=?, cpf=?, telefone=?, email=?, login_usuario=?, senha=?, verificar_adm=? WHERE id=?";
     PreparedStatement statement = connection.prepareStatement(sql);
 
     statement.setString(1, user.getName());
-    statement.setString(2, user.getUsername());
-    statement.setString(3, user.getPassword());
-    statement.setString(4, user.getCpf());
-    statement.setBoolean(5, user.getIsAdm());
-    statement.setInt(6, user.getId());
+    statement.setString(2, user.getCpf());
+    statement.setString(3, user.getPhone());
+    statement.setString(4, user.getEmail());
+    statement.setString(5, user.getUsername());
+    statement.setString(6, user.getPassword());
+    statement.setBoolean(7, user.getIsAdm());
+    statement.setInt(8, user.getId());
 
     int rowsUpdated = statement.executeUpdate();
 
@@ -51,11 +55,9 @@ public class UserDAO {
 
   }
 
-  public boolean deleteUser(User user) throws SQLException {
-    String sql = "DELETE from user WHERE id=?";
+  public boolean deleteUser(int id) throws SQLException {
+    String sql = "DELETE from usuario WHERE id=" + id;
     PreparedStatement statement = connection.prepareStatement(sql);
-
-    statement.setInt(1, user.getId());
 
     int rowsUpdated = statement.executeUpdate();
 
@@ -64,23 +66,15 @@ public class UserDAO {
   }
 
   // procura user no banco seguindo o type (cpf ou login) e retorna user;
-  public User verifyUser(String type, String info) throws SQLException {
-    String sql;
-
-    if (type == "cpf") {
-      sql = "SELECT * from user WHERE cpf=?";
-    } else {
-      sql = "SELECT * from user WHERE login=?";
-    }
+  public User verifyUser(String sql) throws SQLException {
 
     PreparedStatement statement = connection.prepareStatement(sql);
-    statement.setString(1, info);
 
     ResultSet result = statement.executeQuery();
 
     if (result.next()) {
-      User user = new User(result.getInt(1), result.getString(2), result.getBoolean(6), result.getString(3),
-          result.getString(4), result.getString(5));
+      User user = new User(result.getInt(1), result.getString(2), result.getBoolean(8), result.getString(6),
+          result.getString(7), result.getString(3), result.getString(4), result.getString(5));
 
       return user;
     } else {
@@ -90,7 +84,7 @@ public class UserDAO {
   }
 
   public User findUserForLogin(String username, String password) throws SQLException {
-    String sql = "SELECT * from user WHERE login=? and senha=?";
+    String sql = "SELECT * from usuario WHERE login_usuario=? and senha=?";
     PreparedStatement statement = connection.prepareStatement(sql);
 
     statement.setString(1, username);
@@ -99,8 +93,8 @@ public class UserDAO {
     ResultSet result = statement.executeQuery();
 
     if (result.next()) {
-      User user = new User(result.getInt(1), result.getString(2), result.getBoolean(6), result.getString(3),
-          result.getString(4), result.getString(5));
+      User user = new User(result.getInt(1), result.getString(2), result.getBoolean(8), result.getString(6),
+          result.getString(7), result.getString(3), result.getString(4), result.getString(5));
 
       return user;
     } else {
@@ -117,8 +111,8 @@ public class UserDAO {
     ResultSet result = statement.executeQuery();
 
     if (result.next()) {
-      User user = new User(result.getInt(1), result.getString(2), result.getBoolean(6), result.getString(3),
-          result.getString(4), result.getString(5));
+      User user = new User(result.getInt(1), result.getString(2), result.getBoolean(8), result.getString(6),
+          result.getString(7), result.getString(3), result.getString(4), result.getString(5));
 
       return user;
     } else {
@@ -135,8 +129,8 @@ public class UserDAO {
     List<User> users = new ArrayList<>();
 
     while (result.next()) {
-      User user = new User(result.getInt(1), result.getString(2), result.getBoolean(6), result.getString(3),
-          result.getString(4), result.getString(5));
+      User user = new User(result.getInt(1), result.getString(2), result.getBoolean(8), result.getString(6),
+          result.getString(7), result.getString(3), result.getString(4), result.getString(5));
 
       users.add(user);
     }
@@ -146,7 +140,7 @@ public class UserDAO {
   }
 
   public List<User> listUsers() throws SQLException {
-    String sql = "SELECT * from user";
+    String sql = "SELECT * from usuario";
     PreparedStatement statement = connection.prepareStatement(sql);
 
     ResultSet result = statement.executeQuery();
@@ -154,8 +148,8 @@ public class UserDAO {
     List<User> users = new ArrayList<>();
 
     while (result.next()) {
-      User user = new User(result.getInt(1), result.getString(2), result.getBoolean(6), result.getString(3),
-          result.getString(4), result.getString(5));
+      User user = new User(result.getInt(1), result.getString(2), result.getBoolean(8), result.getString(6),
+          result.getString(7), result.getString(3), result.getString(4), result.getString(5));
 
       users.add(user);
     }

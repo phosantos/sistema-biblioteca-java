@@ -7,6 +7,16 @@ public class Loan {
   private Item item;
   private Client client;
   private Date loanDate, devolutionDate;
+  private boolean returned;
+
+  public Loan(int id, Item item, Client client, Date loanDate, Date devolutionDate, boolean returned) {
+    this.id = id;
+    this.item = item;
+    this.client = client;
+    this.loanDate = loanDate;
+    this.devolutionDate = devolutionDate;
+    this.returned = returned;
+  }
 
   public Loan(int id, Item item, Client client, Date loanDate, Date devolutionDate) {
     this.id = id;
@@ -14,6 +24,23 @@ public class Loan {
     this.client = client;
     this.loanDate = loanDate;
     this.devolutionDate = devolutionDate;
+    this.returned = false;
+  }
+
+  public Loan(Item item, Client client, Date loanDate, Date devolutionDate) {
+    this.item = item;
+    this.client = client;
+    this.loanDate = loanDate;
+    this.devolutionDate = devolutionDate;
+    this.returned = false;
+  }
+
+  public boolean isReturned() {
+    return returned;
+  }
+
+  public void setReturned(boolean returned) {
+    this.returned = returned;
   }
 
   public int getId() {

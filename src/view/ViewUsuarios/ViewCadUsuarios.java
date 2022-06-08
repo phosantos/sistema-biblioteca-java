@@ -31,109 +31,190 @@ public class ViewCadUsuarios extends javax.swing.JInternalFrame {
          */
         @SuppressWarnings("unchecked")
         // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+        // <editor-fold defaultstate="collapsed" desc="Generated
+        // Code">//GEN-BEGIN:initComponents
+        private void initComponents() {
 
-        loginInput = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        senhaInput = new javax.swing.JTextField();
-        cadastrarBtn = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        cpfInput = new javax.swing.JTextField();
-        nomeInput = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        verificaAdmInput = new javax.swing.JCheckBox();
+                loginInput = new javax.swing.JTextField();
+                jLabel1 = new javax.swing.JLabel();
+                jLabel2 = new javax.swing.JLabel();
+                senhaInput = new javax.swing.JTextField();
+                cadastrarBtn = new javax.swing.JButton();
+                jLabel3 = new javax.swing.JLabel();
+                cpfInput = new javax.swing.JTextField();
+                nomeInput = new javax.swing.JTextField();
+                jLabel4 = new javax.swing.JLabel();
+                verificaAdmInput = new javax.swing.JCheckBox();
+                jLabel5 = new javax.swing.JLabel();
+                telefoneInput = new javax.swing.JTextField();
+                jLabel6 = new javax.swing.JLabel();
+                emailInput = new javax.swing.JTextField();
 
-        setClosable(true);
-        setMinimumSize(new java.awt.Dimension(800, 500));
-        setPreferredSize(new java.awt.Dimension(800, 500));
+                setClosable(true);
+                setMinimumSize(new java.awt.Dimension(1280, 695));
+                setPreferredSize(new java.awt.Dimension(1280, 695));
 
-        loginInput.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+                loginInput.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel1.setText("Login");
+                jLabel1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+                jLabel1.setText("Usuário");
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel2.setText("Senha");
+                jLabel2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+                jLabel2.setText("Senha");
 
-        senhaInput.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+                senhaInput.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
-        cadastrarBtn.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        cadastrarBtn.setText("Cadastrar");
-        cadastrarBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastrarBtnActionPerformed(evt);
-            }
-        });
+                cadastrarBtn.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+                cadastrarBtn.setText("Cadastrar");
+                cadastrarBtn.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                cadastrarBtnActionPerformed(evt);
+                        }
+                });
 
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel3.setText("CPF");
+                jLabel3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+                jLabel3.setText("CPF");
 
-        cpfInput.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+                cpfInput.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
-        nomeInput.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+                nomeInput.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel4.setText("Nome");
+                jLabel4.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+                jLabel4.setText("Nome");
 
-        verificaAdmInput.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        verificaAdmInput.setText("Conta de Administrador");
-        verificaAdmInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                verificaAdmInputActionPerformed(evt);
-            }
-        });
+                verificaAdmInput.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+                verificaAdmInput.setText("Conta de Administrador");
+                verificaAdmInput.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                verificaAdmInputActionPerformed(evt);
+                        }
+                });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(144, 144, 144)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(nomeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(cpfInput, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(cadastrarBtn)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(verificaAdmInput, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(loginInput, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(senhaInput, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(144, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nomeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cpfInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(loginInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(senhaInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(verificaAdmInput)
-                .addGap(18, 18, 18)
-                .addComponent(cadastrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(64, Short.MAX_VALUE))
-        );
+                jLabel5.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+                jLabel5.setText("Telefone");
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+                telefoneInput.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+
+                jLabel6.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+                jLabel6.setText("Email");
+
+                emailInput.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+
+                javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+                getContentPane().setLayout(layout);
+                layout.setHorizontalGroup(
+                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createSequentialGroup()
+                                                                .addGap(384, 384, 384)
+                                                                .addGroup(layout.createParallelGroup(
+                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                .addComponent(jLabel6)
+                                                                                .addComponent(emailInput,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                500,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(jLabel5)
+                                                                                .addComponent(telefoneInput,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                500,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(jLabel4)
+                                                                                .addComponent(nomeInput,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                500,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(jLabel3)
+                                                                                .addComponent(cpfInput,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                500,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addGroup(layout.createParallelGroup(
+                                                                                                javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                                                .addComponent(cadastrarBtn)
+                                                                                                .addGroup(layout.createParallelGroup(
+                                                                                                                javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                                                                false)
+                                                                                                                .addComponent(verificaAdmInput,
+                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                                                .addComponent(jLabel2,
+                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                                                .addComponent(jLabel1,
+                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                                                .addComponent(loginInput,
+                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                                                .addComponent(senhaInput,
+                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING,
+                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                                500,
+                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                                .addContainerGap(384, Short.MAX_VALUE)));
+                layout.setVerticalGroup(
+                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createSequentialGroup()
+                                                                .addGap(70, 70, 70)
+                                                                .addComponent(jLabel4)
+                                                                .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(nomeInput,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                30,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(jLabel3)
+                                                                .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(cpfInput,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                30,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(jLabel5)
+                                                                .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(telefoneInput,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                30,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(jLabel6)
+                                                                .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(emailInput,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                30,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(jLabel1)
+                                                                .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(loginInput,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                30,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addComponent(jLabel2)
+                                                                .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(senhaInput,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                30,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(
+                                                                                javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addComponent(verificaAdmInput)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(cadastrarBtn,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                40,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addContainerGap(73, Short.MAX_VALUE)));
+
+                pack();
+        }// </editor-fold>//GEN-END:initComponents
 
         // verificar se todos os campos foram preenchidos
 
@@ -147,12 +228,15 @@ public class ViewCadUsuarios extends javax.swing.JInternalFrame {
         }
 
         // se existir user cadastrado com o cpf e com o login informados retorna true;
-        private boolean verificarCpf(String cpf) {
+
+        private boolean verificarDadosJaExistentes(String campo, String campoValue) {
                 UserDAO dao;
                 User user = null;
+                String sql = "SELECT * from usuario WHERE " + campo + "='" + campoValue + "'";
+
                 try {
                         dao = new UserDAO();
-                        user = dao.verifyUser("cpf", cpf);
+                        user = dao.verifyUser(sql);
                         dao.close();
 
                 } catch (SQLException e) {
@@ -165,40 +249,19 @@ public class ViewCadUsuarios extends javax.swing.JInternalFrame {
                 } else {
                         return false;
                 }
-
-        }
-
-        private boolean verificarLogin(String login) {
-                UserDAO dao;
-                User user = null;
-                try {
-                        dao = new UserDAO();
-                        user = dao.verifyUser("login", login);
-                        dao.close();
-
-                } catch (SQLException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                }
-
-                if (user != null) {
-                        return true;
-                } else {
-                        return false;
-                }
-
         }
 
         private void cadastrarBtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cadastrarBtnActionPerformed
 
                 if (verificarCamposPreenchidos()) {
                         User user = new User(nomeInput.getText(), verificaAdmInput.isSelected(), loginInput.getText(),
-                                        senhaInput.getText(), cpfInput.getText());
+                                        senhaInput.getText(), cpfInput.getText(), telefoneInput.getText(),
+                                        emailInput.getText());
                         UserDAO dao;
 
-                        if (verificarCpf(user.getCpf())) {
+                        if (verificarDadosJaExistentes("cpf", user.getCpf())) {
                                 JOptionPane.showMessageDialog(null, "CPF já Cadastrado!");
-                        } else if (verificarLogin(user.getUsername())) {
+                        } else if (verificarDadosJaExistentes("login_usuario", user.getUsername())) {
                                 JOptionPane.showMessageDialog(null, "Login já cadastrado!");
                         } else {
                                 try {
@@ -225,16 +288,20 @@ public class ViewCadUsuarios extends javax.swing.JInternalFrame {
                 // TODO add your handling code here:
         }// GEN-LAST:event_verificaAdmInputActionPerformed
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton cadastrarBtn;
-    private javax.swing.JTextField cpfInput;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField loginInput;
-    private javax.swing.JTextField nomeInput;
-    private javax.swing.JTextField senhaInput;
-    private javax.swing.JCheckBox verificaAdmInput;
-    // End of variables declaration//GEN-END:variables
+        // Variables declaration - do not modify//GEN-BEGIN:variables
+        private javax.swing.JButton cadastrarBtn;
+        private javax.swing.JTextField cpfInput;
+        private javax.swing.JTextField emailInput;
+        private javax.swing.JLabel jLabel1;
+        private javax.swing.JLabel jLabel2;
+        private javax.swing.JLabel jLabel3;
+        private javax.swing.JLabel jLabel4;
+        private javax.swing.JLabel jLabel5;
+        private javax.swing.JLabel jLabel6;
+        private javax.swing.JTextField loginInput;
+        private javax.swing.JTextField nomeInput;
+        private javax.swing.JTextField senhaInput;
+        private javax.swing.JTextField telefoneInput;
+        private javax.swing.JCheckBox verificaAdmInput;
+        // End of variables declaration//GEN-END:variables
 }

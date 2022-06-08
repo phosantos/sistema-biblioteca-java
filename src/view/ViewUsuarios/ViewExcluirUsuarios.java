@@ -41,6 +41,7 @@ public class ViewExcluirUsuarios extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -59,11 +60,17 @@ public class ViewExcluirUsuarios extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         excluirBtn = new javax.swing.JButton();
         labelId = new javax.swing.JLabel();
-        labelCpf = new javax.swing.JLabel();
-        labelLogin = new javax.swing.JLabel();
         labelNome = new javax.swing.JLabel();
+        labelCpf = new javax.swing.JLabel();
+        labelTelefone = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        labelLogin = new javax.swing.JLabel();
+        labelEmail = new javax.swing.JLabel();
 
         setClosable(true);
+        setMinimumSize(new java.awt.Dimension(1280, 695));
+        setPreferredSize(new java.awt.Dimension(1280, 695));
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
                 formInternalFrameActivated(evt);
@@ -118,29 +125,25 @@ public class ViewExcluirUsuarios extends javax.swing.JInternalFrame {
         jPanel1Layout.setHorizontalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(240, 240, 240)
-                                .addGroup(jPanel1Layout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(pesquisaInput, javax.swing.GroupLayout.PREFERRED_SIZE, 500,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(200, 200, 200)
-                                                .addComponent(pesquisarBtn))
+                                .addGap(384, 384, 384)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel1Layout
+                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                                .addComponent(jLabel1)
+                                                .addComponent(pesquisarBtn)
+                                                .addComponent(pesquisaInput, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        500, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(jLabel2)
-                                                .addGap(18, 18, 18)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(rbId)
-                                                .addGap(18, 18, 18)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(rbCpf)))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addContainerGap(403, Short.MAX_VALUE)
-                                .addComponent(jLabel1)
-                                .addGap(414, 414, 414)));
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(40, 40, 40)
+                                .addGap(80, 80, 80)
                                 .addComponent(jLabel1)
                                 .addGap(18, 18, 18)
                                 .addComponent(pesquisaInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30,
@@ -162,16 +165,16 @@ public class ViewExcluirUsuarios extends javax.swing.JInternalFrame {
                         .addGap(0, 0, Short.MAX_VALUE));
         jPanel2Layout.setVerticalGroup(
                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 250, Short.MAX_VALUE));
+                        .addGap(0, 0, Short.MAX_VALUE));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        jLabel4.setText("Nome:");
+        jLabel4.setText("Telefone:");
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        jLabel3.setText("CPF:");
+        jLabel3.setText("Nome:");
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        jLabel5.setText("Login:");
+        jLabel5.setText("CPF:");
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jLabel6.setText("ID:");
@@ -186,51 +189,85 @@ public class ViewExcluirUsuarios extends javax.swing.JInternalFrame {
 
         labelId.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
+        labelNome.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+
         labelCpf.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+
+        labelTelefone.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jLabel7.setText("Usuário:");
+
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jLabel8.setText("Email:");
 
         labelLogin.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
-        labelNome.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        labelEmail.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout
-                                                .createSequentialGroup()
-                                                .addGap(0, 257, Short.MAX_VALUE)
+                                                .addGap(383, 383, 383)
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jLabel3)
-                                                        .addComponent(jLabel6)
-                                                        .addComponent(jLabel5)
-                                                        .addComponent(jLabel4))
-                                                .addGap(18, 18, 18)
-                                                .addGroup(layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING,
-                                                                false)
-                                                        .addComponent(labelId, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(labelCpf, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                400, Short.MAX_VALUE)
-                                                        .addComponent(labelLogin, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(labelNome, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addGap(258, 258, 258))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(jLabel7)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(labelLogin,
+                                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                        Short.MAX_VALUE))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGroup(layout.createParallelGroup(
+                                                                        javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(jLabel3)
+                                                                        .addComponent(jLabel6)
+                                                                        .addComponent(jLabel5)
+                                                                        .addComponent(jLabel4)
+                                                                        .addComponent(jLabel8))
+                                                                .addPreferredGap(
+                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addGroup(layout.createParallelGroup(
+                                                                        javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addGroup(layout.createSequentialGroup()
+                                                                                .addGroup(layout.createParallelGroup(
+                                                                                        javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                        .addComponent(labelId,
+                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                Short.MAX_VALUE)
+                                                                                        .addComponent(labelNome,
+                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                284, Short.MAX_VALUE)
+                                                                                        .addComponent(labelCpf,
+                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                Short.MAX_VALUE)
+                                                                                        .addComponent(labelTelefone,
+                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                Short.MAX_VALUE))
+                                                                                .addGap(6, 6, 6))
+                                                                        .addComponent(labelEmail,
+                                                                                javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                Short.MAX_VALUE))))
+                                                .addGap(517, 517, 517))
                                         .addGroup(layout.createSequentialGroup()
-                                                .addGap(452, 452, 452)
+                                                .addGap(596, 596, 596)
                                                 .addComponent(excluirBtn)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
                                                         javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)));
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
@@ -249,34 +286,46 @@ public class ViewExcluirUsuarios extends javax.swing.JInternalFrame {
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(jLabel3)
-                                                        .addComponent(labelCpf))
+                                                        .addComponent(labelNome))
                                                 .addGap(18, 18, 18)
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(jLabel5)
-                                                        .addComponent(labelLogin))
+                                                        .addComponent(labelCpf))
                                                 .addGap(18, 18, 18)
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(jLabel4)
-                                                        .addComponent(labelNome))
-                                                .addGap(40, 40, 40)
+                                                        .addComponent(labelTelefone))
+                                                .addGap(18, 18, 18)
+                                                .addGroup(layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(jLabel8)
+                                                        .addComponent(labelEmail,
+                                                                javax.swing.GroupLayout.PREFERRED_SIZE, 20,
+                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(18, 18, 18)
+                                                .addGroup(layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(jLabel7)
+                                                        .addComponent(labelLogin,
+                                                                javax.swing.GroupLayout.PREFERRED_SIZE, 20,
+                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(18, 52, Short.MAX_VALUE)
                                                 .addComponent(excluirBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40,
                                                         javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(0, 40, Short.MAX_VALUE)))));
+                                                .addGap(80, 80, 80)))));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void excluirBtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_excluirBtnActionPerformed
         UserDAO dao;
-        User user = new User(Integer.parseInt(labelId.getText()), labelId.getText(), true,
-                labelLogin.getText(), "", labelCpf.getText());
 
         try {
             dao = new UserDAO();
 
-            if (dao.deleteUser(user)) {
+            if (dao.deleteUser(Integer.parseInt(labelId.getText()))) {
                 JOptionPane.showMessageDialog(null, "Usuário excluído!");
                 this.dispose();
             } else {
@@ -296,9 +345,9 @@ public class ViewExcluirUsuarios extends javax.swing.JInternalFrame {
         String sql = "";
 
         if (rbId.isSelected()) {
-            sql = "SELECT * from user where id=?";
+            sql = "SELECT * from usuario where id=?";
         } else if (rbCpf.isSelected()) {
-            sql = "SELECT * from user where cpf=?";
+            sql = "SELECT * from usuario where cpf=?";
             ;
         }
 
@@ -307,16 +356,20 @@ public class ViewExcluirUsuarios extends javax.swing.JInternalFrame {
             user = dao.findUser(sql, pesquisaInput.getText());
 
             if (user != null) {
+                labelId.setText(Integer.toString(user.getId()));
                 labelNome.setText(user.getName());
                 labelCpf.setText(user.getCpf());
+                labelTelefone.setText(user.getPhone());
+                labelEmail.setText(user.getEmail());
                 labelLogin.setText(user.getUsername());
-                labelId.setText(String.valueOf(user.getId()));
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário não encontrado!");
+                labelId.setText("");
                 labelNome.setText("");
                 labelCpf.setText("");
+                labelTelefone.setText("");
+                labelEmail.setText("");
                 labelLogin.setText("");
-                labelId.setText("");
             }
 
             dao.close();
@@ -337,12 +390,16 @@ public class ViewExcluirUsuarios extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel labelCpf;
+    private javax.swing.JLabel labelEmail;
     private javax.swing.JLabel labelId;
     private javax.swing.JLabel labelLogin;
     private javax.swing.JLabel labelNome;
+    private javax.swing.JLabel labelTelefone;
     private javax.swing.JTextField pesquisaInput;
     private javax.swing.ButtonGroup pesquisaOpcoes;
     private javax.swing.JButton pesquisarBtn;
