@@ -5,7 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import db.Conector;
 import model.Loan;
@@ -83,6 +85,39 @@ public class LoanDAO {
     } else {
       return null;
     }
+  }
+
+  public List<Object[]> listLoanJoin() throws SQLException {
+    String sql = "SELECT emprestimo.data_emprestimo, emprestimo.id, cliente.nome, cliente.cpf, acervo.titulo, emprestimo.data_devolucao from emprestimo inner join cliente on emprestimo.id_cliente=cliente.id inner join acervo on emprestimo.id_acervo=acervo.id ORDER BY emprestimo.data_emprestimo DESC, emprestimo.id DESC";
+    PreparedStatement statement = connection.prepareStatement(sql);
+    ResultSet result = statement.executeQuery();
+    List<Object[]> loanList = new ArrayList<>();
+
+    while (result.next()) {
+      Object[] joinTable = { formatarData(result.getDate(1)), result.getInt(2), result.getString(3),
+          result.getString(4), result.getString(5), formatarData(result.getDate(6)) };
+      loanList.add(joinTable);
+    }
+
+    return loanList;
+  }
+
+  public List<Object[]> listLoanDateFilter(String initialDate, String finalDate) throws SQLException {
+    String sql = "SELECT emprestimo.id, emprestimo.data_emprestimo,  cliente.nome, cliente.cpf, acervo.titulo, emprestimo.data_devolucao from emprestimo inner join cliente on emprestimo.id_cliente=cliente.id inner join acervo on emprestimo.id_acervo=acervo.id WHERE emprestimo.data_emprestimo between STR_TO_DATE(?,'%d/%m/%Y') and STR_TO_DATE(?,'%d/%m/%Y') order by emprestimo.data_emprestimo";
+
+    PreparedStatement statement = connection.prepareStatement(sql);
+    statement.setString(1, initialDate);
+    statement.setString(2, finalDate);
+    ResultSet result = statement.executeQuery();
+    List<Object[]> loanList = new ArrayList<>();
+
+    while (result.next()) {
+      Object[] joinTable = { result.getInt(1), formatarData(result.getDate(2)), result.getString(3),
+          result.getString(4), result.getString(5), formatarData(result.getDate(6)) };
+      loanList.add(joinTable);
+    }
+
+    return loanList;
   }
 
   public void close() throws SQLException {

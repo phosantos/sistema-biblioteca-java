@@ -104,12 +104,17 @@ public class ViewLogin extends javax.swing.JFrame {
         UserDAO dao;
         User user;
         ViewAdmDashboard admDashboard = new ViewAdmDashboard();
+        ViewNormalDashboard normalDashboard = new ViewNormalDashboard();
         try {
             dao = new UserDAO();
             user = dao.findUserForLogin(loginInput.getText(), senhaInput.getText());
 
             if (user != null) {
-                admDashboard.setVisible(true);
+                if (user.getIsAdm()) {
+                    admDashboard.setVisible(true);
+                } else {
+                    normalDashboard.setVisible(true);
+                }
                 this.dispose();
                 // if (user.getIsAdm) {}
             } else {

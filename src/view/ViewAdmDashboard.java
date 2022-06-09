@@ -21,6 +21,9 @@ import view.ViewClientes.PesquisarClientes;
 import view.ViewEmprestimos.ViewDevoluçãoEmprestimo;
 import view.ViewEmprestimos.ViewEstenderEmprestimo;
 import view.ViewEmprestimos.ViewNovoEmprestimo;
+import view.ViewEmprestimos.ViewPesquisarEmprestimo;
+import view.ViewRelatorios.ViewEmprestimosPorPeriodo;
+import view.ViewRelatorios.ViewHistoricoRelatorios;
 import view.ViewUsuarios.ViewCadUsuarios;
 import view.ViewUsuarios.ViewExcluirUsuarios;
 import view.ViewUsuarios.ViewListarUsuarios;
@@ -54,7 +57,8 @@ public class ViewAdmDashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -82,7 +86,10 @@ public class ViewAdmDashboard extends javax.swing.JFrame {
         novoEmprestimo = new javax.swing.JMenuItem();
         estenderEmprestimo = new javax.swing.JMenuItem();
         devolucaoEmprestimo = new javax.swing.JMenuItem();
+        pesquisarEmprestimo = new javax.swing.JMenuItem();
         mnRelatorios = new javax.swing.JMenu();
+        histRelatorios = new javax.swing.JMenuItem();
+        histRelatorios1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Dashboard (ADM)");
@@ -93,20 +100,24 @@ public class ViewAdmDashboard extends javax.swing.JFrame {
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
-                jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 1280, Short.MAX_VALUE));
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1280, Short.MAX_VALUE)
+        );
         jDesktopPane1Layout.setVerticalGroup(
-                jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 697, Short.MAX_VALUE));
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 697, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jDesktopPane1));
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jDesktopPane1)
+        );
         jPanel1Layout.setVerticalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jDesktopPane1));
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jDesktopPane1)
+        );
 
         mnAcervo.setText("Acervo");
 
@@ -266,9 +277,34 @@ public class ViewAdmDashboard extends javax.swing.JFrame {
         });
         mnEmprestimos.add(devolucaoEmprestimo);
 
+        pesquisarEmprestimo.setText("Pesquisar");
+        pesquisarEmprestimo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pesquisarEmprestimoActionPerformed(evt);
+            }
+        });
+        mnEmprestimos.add(pesquisarEmprestimo);
+
         jMenuBar1.add(mnEmprestimos);
 
         mnRelatorios.setText("Relatórios");
+
+        histRelatorios.setText("Histórico de Empréstimos");
+        histRelatorios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                histRelatoriosActionPerformed(evt);
+            }
+        });
+        mnRelatorios.add(histRelatorios);
+
+        histRelatorios1.setText("Ver Empréstimos por Período");
+        histRelatorios1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                histRelatorios1ActionPerformed(evt);
+            }
+        });
+        mnRelatorios.add(histRelatorios1);
+
         jMenuBar1.add(mnRelatorios);
 
         setJMenuBar(jMenuBar1);
@@ -276,138 +312,139 @@ public class ViewAdmDashboard extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void histRelatorios1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_histRelatorios1ActionPerformed
+       ViewEmprestimosPorPeriodo empPeriodo = new ViewEmprestimosPorPeriodo();
+       jDesktopPane1.add(empPeriodo);
+       empPeriodo.setVisible(true);
+    }//GEN-LAST:event_histRelatorios1ActionPerformed
+
+    private void pesquisarEmprestimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarEmprestimoActionPerformed
+        ViewPesquisarEmprestimo pesquisarEmprestimo = new ViewPesquisarEmprestimo();
+        jDesktopPane1.add(pesquisarEmprestimo);
+        pesquisarEmprestimo.setVisible(true);
+    }//GEN-LAST:event_pesquisarEmprestimoActionPerformed
+
+    private void histRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_histRelatoriosActionPerformed
+
+        ViewHistoricoRelatorios historicoRelatorios = new ViewHistoricoRelatorios();
+        jDesktopPane1.add(historicoRelatorios);
+        historicoRelatorios.setVisible(true);
+    }// GEN-LAST:event_histRelatoriosActionPerformed
+
     private void cadClientesActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cadClientesActionPerformed
-        jDesktopPane1.removeAll();
         CadCliente cadCliente = new CadCliente();
         jDesktopPane1.add(cadCliente);
         cadCliente.setVisible(true);
     }// GEN-LAST:event_cadClientesActionPerformed
 
     private void editarClientesActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_editarClientesActionPerformed
-        jDesktopPane1.removeAll();
         EditCliente editCliente = new EditCliente();
         jDesktopPane1.add(editCliente);
         editCliente.setVisible(true);
     }// GEN-LAST:event_editarClientesActionPerformed
 
     private void excluirClientesActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_excluirClientesActionPerformed
-        jDesktopPane1.removeAll();
         ExcluirCliente excluirCliente = new ExcluirCliente();
         jDesktopPane1.add(excluirCliente);
         excluirCliente.setVisible(true);
     }// GEN-LAST:event_excluirClientesActionPerformed
 
     private void pesquisarClientesActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_pesquisarClientesActionPerformed
-        jDesktopPane1.removeAll();
         PesquisarClientes pesquisarClientes = new PesquisarClientes();
         jDesktopPane1.add(pesquisarClientes);
         pesquisarClientes.setVisible(true);
     }// GEN-LAST:event_pesquisarClientesActionPerformed
 
     private void listarClientesActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_listarClientesActionPerformed
-        jDesktopPane1.removeAll();
         ListarClientes listarClientes = new ListarClientes();
         jDesktopPane1.add(listarClientes);
         listarClientes.setVisible(true);
     }// GEN-LAST:event_listarClientesActionPerformed
 
     private void devolucaoEmprestimoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_devolucaoEmprestimoActionPerformed
-        jDesktopPane1.removeAll();
         ViewDevoluçãoEmprestimo devolucaoEmprestimo = new ViewDevoluçãoEmprestimo();
         jDesktopPane1.add(devolucaoEmprestimo);
         devolucaoEmprestimo.setVisible(true);
     }// GEN-LAST:event_devolucaoEmprestimoActionPerformed
 
     private void estenderEmprestimoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_estenderEmprestimoActionPerformed
-        jDesktopPane1.removeAll();
         ViewEstenderEmprestimo estenderEmprestimo = new ViewEstenderEmprestimo();
         jDesktopPane1.add(estenderEmprestimo);
         estenderEmprestimo.setVisible(true);
     }// GEN-LAST:event_estenderEmprestimoActionPerformed
 
     private void novoEmprestimoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_novoEmprestimoActionPerformed
-        jDesktopPane1.removeAll();
         ViewNovoEmprestimo novoEmprestimo = new ViewNovoEmprestimo();
         jDesktopPane1.add(novoEmprestimo);
         novoEmprestimo.setVisible(true);
     }// GEN-LAST:event_novoEmprestimoActionPerformed
 
     private void cadAcervoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cadAcervoActionPerformed
-        jDesktopPane1.removeAll();
         ViewCadAcervo cadAcervo = new ViewCadAcervo();
         jDesktopPane1.add(cadAcervo);
         cadAcervo.setVisible(true);
     }// GEN-LAST:event_cadAcervoActionPerformed
 
     private void editarAcervoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_editarAcervoActionPerformed
-        jDesktopPane1.removeAll();
         ViewEditarAcervo editarAcervo = new ViewEditarAcervo();
         jDesktopPane1.add(editarAcervo);
         editarAcervo.setVisible(true);
     }// GEN-LAST:event_editarAcervoActionPerformed
 
     private void excluirAcervoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_excluirAcervoActionPerformed
-        jDesktopPane1.removeAll();
         ViewExcluirAcervo excluirAcervo = new ViewExcluirAcervo();
         jDesktopPane1.add(excluirAcervo);
         excluirAcervo.setVisible(true);
     }// GEN-LAST:event_excluirAcervoActionPerformed
 
     private void pesquisarAcervoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_pesquisarAcervoActionPerformed
-        jDesktopPane1.removeAll();
         ViewPesquisarAcervo pesquisarAcervo = new ViewPesquisarAcervo();
         jDesktopPane1.add(pesquisarAcervo);
         pesquisarAcervo.setVisible(true);
     }// GEN-LAST:event_pesquisarAcervoActionPerformed
 
     private void listarAcervoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_listarAcervoActionPerformed
-        jDesktopPane1.removeAll();
         ViewListarAcervo listarAcervo = new ViewListarAcervo();
         jDesktopPane1.add(listarAcervo);
         listarAcervo.setVisible(true);
     }// GEN-LAST:event_listarAcervoActionPerformed
 
     private void cadUsuariosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cadUsuariosActionPerformed
-        jDesktopPane1.removeAll();
         ViewCadUsuarios cadUsuarios = new ViewCadUsuarios();
         jDesktopPane1.add(cadUsuarios);
         cadUsuarios.setVisible(true);
     }// GEN-LAST:event_cadUsuariosActionPerformed
 
     private void editarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_editarUsuariosActionPerformed
-        jDesktopPane1.removeAll();
         ViewEditarUsuarios editarUsuarios = new ViewEditarUsuarios();
         jDesktopPane1.add(editarUsuarios);
         editarUsuarios.setVisible(true);
     }// GEN-LAST:event_editarUsuariosActionPerformed
 
     private void excluirUsuariosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_excluirUsuariosActionPerformed
-        jDesktopPane1.removeAll();
         ViewExcluirUsuarios excluirUsuarios = new ViewExcluirUsuarios();
         jDesktopPane1.add(excluirUsuarios);
         excluirUsuarios.setVisible(true);
     }// GEN-LAST:event_excluirUsuariosActionPerformed
 
     private void pesquisarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_pesquisarUsuariosActionPerformed
-        jDesktopPane1.removeAll();
         ViewPesquisarUsuarios pesquisarUsuarios = new ViewPesquisarUsuarios();
         jDesktopPane1.add(pesquisarUsuarios);
         pesquisarUsuarios.setVisible(true);
     }// GEN-LAST:event_pesquisarUsuariosActionPerformed
 
     private void listarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_listarUsuariosActionPerformed
-        jDesktopPane1.removeAll();
         ViewListarUsuarios listarUsuarios = new ViewListarUsuarios();
         jDesktopPane1.add(listarUsuarios);
         listarUsuarios.setVisible(true);
@@ -468,6 +505,8 @@ public class ViewAdmDashboard extends javax.swing.JFrame {
     private javax.swing.JMenuItem excluirAcervo;
     private javax.swing.JMenuItem excluirClientes;
     private javax.swing.JMenuItem excluirUsuarios;
+    private javax.swing.JMenuItem histRelatorios;
+    private javax.swing.JMenuItem histRelatorios1;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
@@ -482,6 +521,7 @@ public class ViewAdmDashboard extends javax.swing.JFrame {
     private javax.swing.JMenuItem novoEmprestimo;
     private javax.swing.JMenuItem pesquisarAcervo;
     private javax.swing.JMenuItem pesquisarClientes;
+    private javax.swing.JMenuItem pesquisarEmprestimo;
     private javax.swing.JMenuItem pesquisarUsuarios;
     // End of variables declaration//GEN-END:variables
 }
