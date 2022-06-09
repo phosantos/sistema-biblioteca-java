@@ -40,6 +40,7 @@ public class ViewNormalDashboard extends javax.swing.JFrame {
      */
     public ViewNormalDashboard() {
         initComponents();
+        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/Images/book-stack-icon-256.png")).getImage());
     }
 
     /**
@@ -63,6 +64,7 @@ public class ViewNormalDashboard extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnAcervo = new javax.swing.JMenu();
         cadAcervo = new javax.swing.JMenuItem();
@@ -91,15 +93,31 @@ public class ViewNormalDashboard extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(1280, 720));
 
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/book-stack-icon-256.png"))); // NOI18N
+        jLabel1.setText("Usuário");
+
+        jDesktopPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1280, Short.MAX_VALUE)
+            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                    .addGap(632, 632, 632)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(648, Short.MAX_VALUE)))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 697, Short.MAX_VALUE)
+            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                    .addGap(339, 339, 339)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(358, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -456,6 +474,7 @@ public class ViewNormalDashboard extends javax.swing.JFrame {
     private javax.swing.JMenuItem histRelatorios;
     private javax.swing.JMenuItem histRelatorios1;
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuItem listarAcervo;
