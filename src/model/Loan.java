@@ -4,35 +4,51 @@ import java.util.Date;
 
 public class Loan {
   private int id;
-  private Item item;
-  private Client client;
-  private Date loanDate, devolutionDate;
+  private int id_client;
+  private int id_item;
+  private String loanDate, devolutionDate;
   private boolean returned;
 
-  public Loan(int id, Item item, Client client, Date loanDate, Date devolutionDate, boolean returned) {
+  public Loan(int id, int id_client, int id_item, String loanDate, String devolutionDate, boolean returned) {
     this.id = id;
-    this.item = item;
-    this.client = client;
+    this.id_client = id_client;
+    this.id_item = id_item;
     this.loanDate = loanDate;
     this.devolutionDate = devolutionDate;
     this.returned = returned;
   }
 
-  public Loan(int id, Item item, Client client, Date loanDate, Date devolutionDate) {
+  public Loan(int id, int id_client, int id_item, String loanDate, String devolutionDate) {
     this.id = id;
-    this.item = item;
-    this.client = client;
+    this.id_client = id_client;
+    this.id_item = id_item;
     this.loanDate = loanDate;
     this.devolutionDate = devolutionDate;
     this.returned = false;
   }
 
-  public Loan(Item item, Client client, Date loanDate, Date devolutionDate) {
-    this.item = item;
-    this.client = client;
+  public Loan(int id_client, int id_item, String loanDate, String devolutionDate) {
+    this.id_client = id_client;
+    this.id_item = id_item;
     this.loanDate = loanDate;
     this.devolutionDate = devolutionDate;
     this.returned = false;
+  }
+
+  public int getId_client() {
+    return id_client;
+  }
+
+  public void setId_client(int id_client) {
+    this.id_client = id_client;
+  }
+
+  public int getId_item() {
+    return id_item;
+  }
+
+  public void setId_item(int id_item) {
+    this.id_item = id_item;
   }
 
   public boolean isReturned() {
@@ -51,35 +67,19 @@ public class Loan {
     this.id = id;
   }
 
-  public Item getItem() {
-    return item;
-  }
-
-  public void setItem(Item item) {
-    this.item = item;
-  }
-
-  public Client getClient() {
-    return client;
-  }
-
-  public void setClient(Client client) {
-    this.client = client;
-  }
-
-  public Date getLoanDate() {
+  public String getLoanDate() {
     return loanDate;
   }
 
-  public void setLoanDate(Date loanDate) {
+  public void setLoanDate(String loanDate) {
     this.loanDate = loanDate;
   }
 
-  public Date getDevolutionDate() {
+  public String getDevolutionDate() {
     return devolutionDate;
   }
 
-  public void setDevolutionDate(Date devolutionDate) {
+  public void setDevolutionDate(String devolutionDate) {
     this.devolutionDate = devolutionDate;
   }
 

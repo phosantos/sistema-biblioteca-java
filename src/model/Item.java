@@ -6,8 +6,6 @@ public class Item {
   private String title, author, publisher, kind, description;
   private boolean isAvailable;
 
-  // disponivel = true / false e qtd;
-
   public Item(int id, int publicationYear, String title, String author, String publisher, String kind,
       String description, boolean isAvailable) {
     this.id = id;

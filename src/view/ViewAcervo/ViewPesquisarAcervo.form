@@ -208,6 +208,7 @@
                     <Column editable="false" title="Dispon&#xed;vel" type="java.lang.Object"/>
                   </Table>
                 </Property>
+                <Property name="cellSelectionEnabled" type="boolean" value="true"/>
               </Properties>
             </Component>
           </SubComponents>

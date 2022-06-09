@@ -35,7 +35,7 @@ public class ViewListarAcervo extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -50,22 +50,16 @@ public class ViewListarAcervo extends javax.swing.JInternalFrame {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
                 formInternalFrameActivated(evt);
             }
-
             public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
             }
-
             public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
             }
-
             public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
             }
-
             public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
             }
-
             public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
             }
-
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
             }
         });
@@ -73,33 +67,36 @@ public class ViewListarAcervo extends javax.swing.JInternalFrame {
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 0, Short.MAX_VALUE));
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
         jPanel1Layout.setVerticalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 0, Short.MAX_VALUE));
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
-        tableUsuarios.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        tableUsuarios.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         tableUsuarios.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][] {
+            new Object [][] {
 
-                },
-                new String[] {
-                        "ID", "Titulo", "Autor", "Editora", "Categoria", "Descrição", "Ano de publicação", "Disponível"
-                }) {
-            boolean[] canEdit = new boolean[] {
-                    false, false, false, false, false, false, false, false
+            },
+            new String [] {
+                "ID", "Titulo", "Autor", "Editora", "Categoria", "Descrição", "Ano de publicação", "Disponível"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit[columnIndex];
+                return canEdit [columnIndex];
             }
         });
+        tableUsuarios.setCellSelectionEnabled(true);
         jScrollPane1.setViewportView(tableUsuarios);
 
         ordernarControl.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        ordernarControl.setModel(new javax.swing.DefaultComboBoxModel<>(
-                new String[] { "ID", "Título", "Autor", "Editora", "Categoria", "Ano de Publicação" }));
+        ordernarControl.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Título", "Autor", "Editora", "Categoria", "Ano de Publicação" }));
         ordernarControl.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 ordernarControlItemStateChanged(evt);
@@ -112,33 +109,28 @@ public class ViewListarAcervo extends javax.swing.JInternalFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1090,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel1)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(ordernarControl, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                        274, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1090, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ordernarControl, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 20, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(ordernarControl, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel1))
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 490,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 20, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ordernarControl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -148,22 +140,22 @@ public class ViewListarAcervo extends javax.swing.JInternalFrame {
 
         switch (ordernarControl.getSelectedItem().toString()) {
             case "ID":
-                sql = "SELECT * from item ORDER by id";
+                sql = "SELECT * from acervo ORDER by id";
                 break;
             case "Título":
-                sql = "SELECT * from item ORDER by titulo";
+                sql = "SELECT * from acervo ORDER by titulo";
                 break;
             case "Autor":
-                sql = "SELECT * from item ORDER by autor";
+                sql = "SELECT * from acervo ORDER by autor";
                 break;
             case "Editora":
-                sql = "SELECT * from item ORDER by editora";
+                sql = "SELECT * from acervo ORDER by editora";
                 break;
             case "Categoria":
-                sql = "SELECT * from item ORDER by categoria";
+                sql = "SELECT * from acervo ORDER by categoria";
                 break;
             case "Ano de Publicação":
-                sql = "SELECT * from item ORDER by anoPublicacao";
+                sql = "SELECT * from acervo ORDER by ano_publicacao";
                 break;
 
             default:
@@ -199,7 +191,7 @@ public class ViewListarAcervo extends javax.swing.JInternalFrame {
         List<Item> items;
         DefaultTableModel table = (DefaultTableModel) tableUsuarios.getModel();
         table.setNumRows(0);
-        String sql = "SELECT * from item";
+        String sql = "SELECT * from acervo";
 
         try {
             dao = new ItemDAO();

@@ -6,9 +6,19 @@ package view.ViewEmprestimos;
 
 import view.ViewAcervo.*;
 import dao.ItemDAO;
+import dao.LoanDAO;
+
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
 import model.Item;
+import model.Loan;
 
 /**
  *
@@ -32,11 +42,14 @@ public class ViewNovoEmprestimo extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         pesquisarIdItemBtn = new javax.swing.JButton();
-        IdItemInput = new javax.swing.JTextField();
+        idItemInput = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         realizarEmprestimoBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -49,8 +62,8 @@ public class ViewNovoEmprestimo extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setTitle("Novo Empréstimo");
-        setMinimumSize(new java.awt.Dimension(900, 434));
-        setPreferredSize(new java.awt.Dimension(900, 434));
+        setMinimumSize(new java.awt.Dimension(1280, 695));
+        setPreferredSize(new java.awt.Dimension(1280, 695));
 
         pesquisarIdItemBtn.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         pesquisarIdItemBtn.setText("Pesquisar");
@@ -60,7 +73,7 @@ public class ViewNovoEmprestimo extends javax.swing.JInternalFrame {
             }
         });
 
-        IdItemInput.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        idItemInput.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel4.setText("ID do item:");
@@ -73,23 +86,24 @@ public class ViewNovoEmprestimo extends javax.swing.JInternalFrame {
             }
         });
 
-        tableCliente.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tableCliente.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         tableCliente.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+                new Object[][] {
 
-            },
-            new String [] {
-                "ID", "Nome", "CPF", "Email", "Endereço"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                },
+                new String[] {
+                        "ID", "Nome", "CPF", "Email", "Endereço"
+                }) {
+            boolean[] canEdit = new boolean[] {
+                    false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+                return canEdit[columnIndex];
             }
         });
+        tableCliente.setCellSelectionEnabled(true);
+        tableCliente.setRowHeight(40);
         jScrollPane1.setViewportView(tableCliente);
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
@@ -105,92 +119,206 @@ public class ViewNovoEmprestimo extends javax.swing.JInternalFrame {
             }
         });
 
-        tableItem.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tableItem.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         tableItem.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Teste", "Teste", "Teste", null, null, null}
-            },
-            new String [] {
-                "Titulo", "Autor", "Editora", "Categoria", "Descrição", "Ano de publicação"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                new Object[][] {
+
+                },
+                new String[] {
+                        "ID", "Titulo", "Autor", "Editora", "Categoria", "Descrição", "Ano de publicação"
+                }) {
+            boolean[] canEdit = new boolean[] {
+                    false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+                return canEdit[columnIndex];
             }
         });
+        tableItem.setCellSelectionEnabled(true);
+        tableItem.setRowHeight(40);
         jScrollPane2.setViewportView(tableItem);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(jScrollPane2)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(196, 196, 196)
-                        .addComponent(jLabel4)
-                        .addGap(51, 51, 51))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel7)
-                        .addGap(47, 47, 47)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(IdItemInput, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cpfClienteInput, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(realizarEmprestimoBtn))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pesquisarCpfBtn)
-                    .addComponent(pesquisarIdItemBtn))
-                .addContainerGap(197, Short.MAX_VALUE))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jScrollPane2)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(386, 386, 386)
+                                                .addComponent(jLabel4)
+                                                .addGap(51, 51, 51))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                                layout.createSequentialGroup()
+                                                        .addContainerGap()
+                                                        .addComponent(jLabel7)
+                                                        .addGap(47, 47, 47)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                        .addComponent(idItemInput, javax.swing.GroupLayout.PREFERRED_SIZE, 250,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(cpfClienteInput, javax.swing.GroupLayout.PREFERRED_SIZE, 250,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(realizarEmprestimoBtn))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(pesquisarCpfBtn)
+                                        .addComponent(pesquisarIdItemBtn))
+                                .addContainerGap(387, Short.MAX_VALUE)));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(IdItemInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pesquisarIdItemBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cpfClienteInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pesquisarCpfBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(realizarEmprestimoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(150, 150, 150)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel4)
+                                        .addComponent(idItemInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pesquisarIdItemBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 70,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(cpfClienteInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pesquisarCpfBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel7))
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 70,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(realizarEmprestimoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(151, Short.MAX_VALUE)));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void pesquisarCpfBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarCpfBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pesquisarCpfBtnActionPerformed
+    // para atualizar a disponibilidade do item quando realizar emprestimo
+    private void atualizarStatusItem(Item item) {
+        ItemDAO dao;
+        try {
+            dao = new ItemDAO();
+            dao.updateItem(item);
+            dao.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
-    private void pesquisarIdItemBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarIdItemBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pesquisarIdItemBtnActionPerformed
+    // pra pegar a data na hora do click em realizar emprestimo
+    private String pegarDataAtual() {
+        GregorianCalendar gc = new GregorianCalendar();
+        Date data = gc.getTime();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return sdf.format(data);
+    }
 
-    private void realizarEmprestimoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_realizarEmprestimoBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_realizarEmprestimoBtnActionPerformed
-    
+    // data atual + 15 dias e pula 1 ou 2 dias se cair no fds
+    private String pegarDataDevolucao() {
+        GregorianCalendar gc = new GregorianCalendar();
+        // devolucao em 15 dias
+        gc.add(gc.DAY_OF_MONTH, 15);
+        Date data = gc.getTime();
+
+        // se cair no domingo add 1 dia, se cair no sab add 2 dias - faz cair na prox
+        // segunda
+        if (data.toString().contains("Sun")) {
+            gc.add(gc.DAY_OF_MONTH, 1);
+            data = gc.getTime();
+        } else if (data.toString().contains("Sat")) {
+            gc.add(gc.DAY_OF_MONTH, 2);
+            data = gc.getTime();
+        }
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return sdf.format(data);
+    }
+
+    private void pesquisarCpfBtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_pesquisarCpfBtnActionPerformed
+
+    }// GEN-LAST:event_pesquisarCpfBtnActionPerformed
+
+    // ao pesquisar id do item no acervo
+    private void pesquisarIdItemBtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_pesquisarIdItemBtnActionPerformed
+        ItemDAO dao;
+        Item item = null;
+        DefaultTableModel table = (DefaultTableModel) tableItem.getModel();
+        table.setNumRows(0);
+
+        try {
+            dao = new ItemDAO();
+            item = dao.findItem(Integer.parseInt(idItemInput.getText()));
+            dao.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        // se o item existir
+        if (item != null) {
+            // se o item estiver disponivel ele vai aparecer na tabela
+            if (item.getIsAvailable()) {
+                Object[] itemData = { item.getId(), item.getTitle(), item.getAuthor(), item.getPublisher(),
+                        item.getKind(), item.getDescription(), item.getPublicationYear() };
+                table.addRow(itemData);
+            } else {
+                JOptionPane.showMessageDialog(null, "Item não disponível para empréstimo!");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Item não encontrado!");
+        }
+
+    }// GEN-LAST:event_pesquisarIdItemBtnActionPerformed
+
+    private void realizarEmprestimoBtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_realizarEmprestimoBtnActionPerformed
+
+        int id_item = Integer.parseInt(tableItem.getValueAt(0, 0).toString());
+        // int id_cliente = Integer.parseInt(tableCliente.getValueAt(0, 0).toString());
+        int id_cliente = 1;
+
+        String tituloItem = tableItem.getValueAt(0, 1).toString();
+        String autorItem = tableItem.getValueAt(0, 2).toString();
+        String editoraItem = tableItem.getValueAt(0, 3).toString();
+        String categoriaItem = tableItem.getValueAt(0, 4).toString();
+        String descricaoItem = tableItem.getValueAt(0, 5).toString();
+        int anoPublicacaoItem = Integer.parseInt(tableItem.getValueAt(0, 6).toString());
+
+        // definir que o item não está mais disponível
+        boolean disponibilidadeItem = false;
+
+        Item item = new Item(id_item, anoPublicacaoItem, tituloItem, autorItem, editoraItem, categoriaItem,
+                descricaoItem, disponibilidadeItem);
+
+        // funcao pra atualizar o item q nao está mais disponível
+        atualizarStatusItem(item);
+
+        Loan emprestimo = new Loan(id_cliente, id_item, pegarDataAtual(), pegarDataDevolucao());
+        LoanDAO dao;
+
+        try {
+            dao = new LoanDAO();
+            if (dao.insertLoan(emprestimo)) {
+                JOptionPane.showMessageDialog(null,
+                        "Empréstimo realizado! Data de devolução: " + emprestimo.getDevolutionDate());
+            } else {
+                JOptionPane.showMessageDialog(null, "Erro! Empréstimo não realizado!");
+            }
+            dao.close();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    // GEN-LAST:event_realizarEmprestimoBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField IdItemInput;
     private javax.swing.JTextField cpfClienteInput;
+    private javax.swing.JTextField idItemInput;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;

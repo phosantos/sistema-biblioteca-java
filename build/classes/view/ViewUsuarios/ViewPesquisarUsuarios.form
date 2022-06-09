@@ -232,6 +232,7 @@
                 <Column editable="false" title="Usu&#xe1;rio" type="java.lang.Object"/>
               </Table>
             </Property>
+            <Property name="cellSelectionEnabled" type="boolean" value="true"/>
           </Properties>
         </Component>
       </SubComponents>

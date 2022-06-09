@@ -19,7 +19,7 @@ public class ItemDAO {
   }
 
   public boolean insertItem(Item item) throws SQLException {
-    String sql = "INSERT into item (titulo,autor,editora,categoria,descricao,anoPublicacao,disponivel) VALUES(?,?,?,?,?,?,?)";
+    String sql = "INSERT into acervo (titulo,autor,editora,categoria,descricao,ano_publicacao,disponibilidade) VALUES(?,?,?,?,?,?,?)";
     PreparedStatement statement = connection.prepareStatement(sql);
     statement.setString(1, item.getTitle());
     statement.setString(2, item.getAuthor());
@@ -39,7 +39,7 @@ public class ItemDAO {
   }
 
   public Item findItem(int id) throws SQLException {
-    String sql = "SELECT * from item WHERE id=" + id;
+    String sql = "SELECT * from acervo WHERE id=" + id;
     PreparedStatement statement = connection.prepareStatement(sql);
 
     ResultSet result = statement.executeQuery();
@@ -58,7 +58,7 @@ public class ItemDAO {
   }
 
   public boolean updateItem(Item item) throws SQLException {
-    String sql = "UPDATE item set titulo=?, autor=?,editora=?,categoria=?,descricao=?,anoPublicacao=? WHERE id=?";
+    String sql = "UPDATE acervo set titulo=?, autor=?,editora=?,categoria=?,descricao=?,ano_publicacao=?, disponibilidade=? WHERE id=?";
     PreparedStatement statement = connection.prepareStatement(sql);
     statement.setString(1, item.getTitle());
     statement.setString(2, item.getAuthor());
@@ -66,7 +66,8 @@ public class ItemDAO {
     statement.setString(4, item.getKind());
     statement.setString(5, item.getDescription());
     statement.setInt(6, item.getPublicationYear());
-    statement.setInt(7, item.getId());
+    statement.setInt(8, item.getId());
+    statement.setBoolean(7, item.getIsAvailable());
 
     int rowsUpdated = statement.executeUpdate();
 
@@ -94,7 +95,7 @@ public class ItemDAO {
   }
 
   public boolean deleteItem(int id) throws SQLException {
-    String sql = "DELETE from item WHERE id=" + id;
+    String sql = "DELETE from acervo WHERE id=" + id;
     PreparedStatement statement = connection.prepareStatement(sql);
     int rowsAffected = statement.executeUpdate();
 
