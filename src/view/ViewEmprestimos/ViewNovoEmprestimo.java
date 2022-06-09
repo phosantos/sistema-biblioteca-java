@@ -5,6 +5,7 @@
 package view.ViewEmprestimos;
 
 import view.ViewAcervo.*;
+import dao.ClientDAO;
 import dao.ItemDAO;
 import dao.LoanDAO;
 
@@ -17,6 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
+import model.Client;
 import model.Item;
 import model.Loan;
 
@@ -240,6 +242,27 @@ public class ViewNovoEmprestimo extends javax.swing.JInternalFrame {
     }
 
     private void pesquisarCpfBtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_pesquisarCpfBtnActionPerformed
+        ClientDAO dao;
+        Client cliente = null;
+        DefaultTableModel table = (DefaultTableModel) tableCliente.getModel();
+        table.setNumRows(0);
+
+        try {
+            dao = new ClientDAO();
+            cliente = (Client) dao.findClientByCpf(cpfClienteInput.getText());
+            dao.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        // se o item existir
+        if (cliente != null) {
+            Object[] clienteData = { cliente.getId(), cliente.getName(), cliente.getCpf(), cliente.getAddress(),
+                    cliente.getEmail() };
+            table.addRow(clienteData);
+        } else {
+            JOptionPane.showMessageDialog(null, "Cliente não encontrado! Realize o Cadastro!");
+        }
 
     }// GEN-LAST:event_pesquisarCpfBtnActionPerformed
 
@@ -277,8 +300,7 @@ public class ViewNovoEmprestimo extends javax.swing.JInternalFrame {
     private void realizarEmprestimoBtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_realizarEmprestimoBtnActionPerformed
 
         int id_item = Integer.parseInt(tableItem.getValueAt(0, 0).toString());
-        // int id_cliente = Integer.parseInt(tableCliente.getValueAt(0, 0).toString());
-        int id_cliente = 1;
+        int id_cliente = Integer.parseInt(tableCliente.getValueAt(0, 0).toString());
 
         String tituloItem = tableItem.getValueAt(0, 1).toString();
         String autorItem = tableItem.getValueAt(0, 2).toString();
