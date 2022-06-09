@@ -34,7 +34,7 @@ public class ClientDAO {
   }
 
   public boolean updateClient(Client client) throws SQLException {
-    String sql = "UPDATE cliente set nome=?, idade=?, cpf=?, email=?, endereco=? WHERE id=?";
+    String sql = "UPDATE cliente set nome=?, cpf=?, email=?, endereco=? WHERE id=?";
     PreparedStatement statement = connection.prepareStatement(sql);
 
     statement.setString(1, client.getName());
